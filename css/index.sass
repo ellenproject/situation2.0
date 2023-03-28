@@ -1,0 +1,238 @@
+*
+    margin: 0
+    padding: 0
+    max-width: 100%
+
+@keyframes fadeIn
+    0%
+        visibility: hidden
+        opacity: 0
+    100%
+        visibility: visible
+        opacity: 1
+
+body
+    overflow-y: auto
+    background-color: #242424
+    .video-box
+        position: relative
+        overflow: hidden
+        height: 100vh
+        .mobile-nav
+            display: none
+        .mobile-contact
+            display: none
+        .nav
+            z-index: 20
+            position: absolute
+            top: 0
+            right: 0
+            // transform: translateX(100%)
+            background-color: #242424
+            opacity: 0.9
+            height: 100%
+            transition: all .5s ease-in-out
+            .nav-box
+                .nav-box-btn
+                    position: absolute
+                    top: 50%
+                    left: -25%
+                    width: 30px
+                    height: 30px
+                    background-color: lightblue
+                    border-radius: 50%
+                    padding: 5px
+                .nav-box-wrapper
+                    .nav-box-wrapper-menu
+                        display: inline-block
+                        margin: 20px auto
+                        .item-logo
+                            width: 80%
+                            margin: 0 auto 20px
+                        .item
+                            color: #FFF
+                            text-align-last: justify
+                            cursor: pointer
+                            transition: all .5s ease-in-out
+                            animation: fadeIn .5s ease-in-out
+                            padding: 20px 30px
+                            font-size: 20px
+                            line-height: 1.7
+                            position: relative
+                            &:hover
+                                color: lightblue
+                            &::after
+                                content: ""
+                                position: absolute
+                                bottom: 0
+                                right: 10%
+                                background: #FFF
+                                width: 80%
+                                height: 1px
+                                opacity: 30%
+                            .fa-regular
+                                position: absolute
+                                top: 40%
+                                transform: translateX(-50%)
+                                left: 0
+                                color: #aaa
+                                font-size: 12px
+                        .item--active
+                            display: block
+                            background-color: lightblue
+                            color: #242424 !important
+                    .nav-box-wrapper-contact
+                        margin: 30% auto 0
+                        width: 15%
+                        li
+                            margin: 10px 0px
+        .open
+            transform: translateX(0)
+        .video-menu
+            display: inline-block
+            z-index: 5
+            position: absolute
+            left: 30px
+            top: 50%
+            transform: translateY(-50%)
+            width: 100%
+            .video-menu-box
+                position: relative
+                .text-box
+                    color: #FFF
+                    padding: 20px 0px
+                    font-size: 20px
+                    text-shadow: 3px 3px 30px #282828
+                    letter-spacing: 1.5px
+                    text-align: left
+                    margin: 0px 0px 0px 20px
+                    position: relative
+                    .fa-regular
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        left: -20px
+                        font-size: 12px
+                // .text-last
+                //     position: relative
+                //     &::after
+                //         content: ""
+                //         position: absolute
+                //         left: 0
+                //         bottom: -500%
+                //         background: #FFF
+                //         height: 500%
+                //         width: 1px
+                // .text-first
+                //     position: relative
+                //     &::before
+                //         content: ""
+                //         position: absolute
+                //         left: 0
+                //         top: -500%
+                //         background: #FFF
+                //         height: 500%
+                //         width: 1px
+        .showblock
+            position: relative
+            display: none
+            width: 100%
+            object-fit: cover
+            transition: all .5s linear
+            // max-height: 0
+            // opacity: 0
+            &--active
+                display: block
+                // max-height: 1280px
+                // opacity: 1
+                animation: fadeIn 5s linear
+        // .display
+        //     display: block
+        //     transition: all .5s linear
+        // .show
+        //     opacity: 1
+        //     transition: all .5s linear
+        .mute-video
+            position: absolute
+            bottom: 30px
+            left: 30px
+            z-index: 15
+            width: 20px
+            height: 20px
+            .play, .pause, .bgm
+                display: none
+                cursor: pointer
+            .active
+                display: block
+                cursor: pointer
+
+@media ( max-width: 480px )
+    body
+        overflow-y: auto
+        background-color: #000
+        .video-box
+            position: relative
+            overflow: hidden
+            height: 100vh
+            .mobile-nav
+                display: block
+                position: relative
+                width: 100%
+                list-style: none
+                .mobile-nav-logo
+                    background-color: #6e1c00
+                    padding: 5px 0
+                    width: 100%
+                    li
+                        width: 35%
+                        margin: 0 auto
+                .mobile-nav-menu
+                    position: relative
+                    display: flex
+                    flex-wrap: wrap
+                    .item
+                        position: relative
+                        width: 50%
+                        background-color: #242424
+                        opacity: .5
+
+                        padding: 10px 0
+                        text-align: center
+                        color: #FFF
+                        font-size: 1rem
+                        letter-spacing: .2rem
+                        // border: 1px solid #121212
+                        background-image: linear-gradient(0deg, #020024 0%, #121212 35%, #242424 100%)
+                    .item--1, .item--3
+                        &::after
+                            position: absolute
+                            top: 50%
+                            right: 0
+                            transform: translateY(-50%)
+                            content: ""
+                            width: 3px
+                            height: 50%
+                            background-color: #121212
+            .mobile-contact
+                display: block
+                .mobile-contact-wrapper
+                    z-index: 1040
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    width: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    margin: 2rem auto 0
+                    background-color: #6e1c00
+                    li
+                        width: 100%
+                        a
+                            width: 50%
+                            padding: 10%
+                            margin: 0 auto
+            .nav
+                display: none
+            .mute-video
+                bottom: 55%
